@@ -1,0 +1,27 @@
+{
+  "name": "tauri-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "style": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@clerk/clerk-react": "^4.23.1",
+    "@tauri-apps/api": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
+    "react-router-dom": "^6.14.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.4.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.4"
+  }
+}
