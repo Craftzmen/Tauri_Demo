@@ -7,7 +7,7 @@ import AuthSignIn from './auth/AuthSignIn';
 import AuthSignUp from './auth/AuthSignUp';
 
 import Home from './home/Home';
-import Tasks_Issues from './tasks/Tasks_Issues';
+import Tasks_Issues from './pages/Tasks_Issues';
 
 const AppProviderWithRoutes = () => {
   const AUTH_KEY = "pk_test_dGlkeS1rYXR5ZGlkLTgwLmNsZXJrLmFjY291bnRzLmRldiQ"
