@@ -56,10 +56,10 @@ const Tasks_Issues = () => {
     <div className="m-10">
       <button
         onClick={taskCreateHandler}
-        className="flex items-center gap-x-4 text-sm bg-indigo-50 px-5 py-2.5 text-indigo-500 hover:opacity-50 cursor-pointer font-medium rounded-3xl"
+        className="flex justify-between items-center gap-x-4 text-sm min-w-[18rem] bg-indigo-50 py-5 px-7 text-indigo-500 hover:opacity-50 cursor-pointer font-medium rounded-lg border-2 border-dashed border-indigo-500"
       >
-        <FaPlus />
         <span>Create Task</span>
+        <FaPlus />
       </button>
       <div>
         <Task tasks={allTasks} onDelete={deleteTaskHandler} onEdit={setEditingTask} />

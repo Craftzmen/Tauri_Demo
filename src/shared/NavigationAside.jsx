@@ -12,7 +12,7 @@ const NavigationAside = () => {
     ]
     return (
         <div>
-            <aside className="flex flex-col justify-between items-start w-[22rem] py-6 px-6 text-sm-md min-h-screen bg-white dark:bg-zinc-900">
+            <aside className="flex flex-col justify-between items-start w-72 xl:w-[22rem] py-6 px-6 text-sm-md min-h-screen sticky top-0 bg-white dark:bg-zinc-900">
                 <nav className='w-full' >
                     <div className='inline-block' >
                         <Link to='/' className='mb-8 flex items-center gap-x-2.5 bg-indigo-50/50 dark:bg-white text-indigo-500 py-3 pl-6 pr-7 rounded-full' >
