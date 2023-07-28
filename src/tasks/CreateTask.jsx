@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const CreateTask = (props) => {
-  const [taskName, setTaskName] = useState('');
-  const [taskDescription, setTaskDescription] = useState('');
+  const [taskName, setTaskName] = useState("");
+  const [taskDescription, setTaskDescription] = useState("");
 
   useEffect(() => {
     if (props.taskToEdit) {
@@ -28,31 +28,38 @@ const CreateTask = (props) => {
         DESCRIPTION: taskDescription,
       };
       props.addTaskHandler(newTask);
-      setTaskName('');
-      setTaskDescription('');
+      setTaskName("");
+      setTaskDescription("");
     }
   };
 
   return (
     <div className={props.className}>
       <div className="bg-white rounded-lg p-7">
-        <form className="flex flex-col text-sm min-w-[20rem] ">
-          <div className="flex flex-col">
+        <div className="flex flex-col text-sm min-w-[25rem]">
+          <h1 className="mb-4 text-lg font-serif" >Create a task</h1>
+          <div className="flex flex-col gap-y-1.5">
+            <label htmlFor="task_name" className="text-zinc-700">
+              Task Name
+            </label>
             <input
               type="text"
               autoFocus
               value={taskName}
               onChange={taskNameHandler}
-              placeholder="Task name"
+              placeholder="Enter name"
               id="task_name"
-              className="bg-zinc-50 rounded-xl px-5 py-3.5"
+              className="bg-zinc-50 rounded-md px-5 py-3.5"
             />
           </div>
-          <div className="flex flex-col mt-4">
+          <div className="flex flex-col mt-4 gap-y-1.5">
+            <label htmlFor="task_name" className="text-zinc-700">
+              Task Description
+            </label>
             <textarea
               value={taskDescription}
               onChange={taskDescriptionHandler}
-              placeholder="Task description"
+              placeholder="Enter description"
               id="task_description"
               className="bg-zinc-50 rounded-lg px-5 py-3.5 w-full min-h-[10rem] "
             />
@@ -63,20 +70,20 @@ const CreateTask = (props) => {
               onClick={createTaskHandler}
               className={`${
                 !taskName || !taskDescription
-                  ? 'cursor-not-allowed text-zinc-400 bg-zinc-100'
-                  : 'cursor-pointer text-indigo-500 bg-indigo-50 hover:opacity-70'
+                  ? "cursor-not-allowed text-zinc-400 bg-zinc-100"
+                  : "cursor-pointer text-indigo-500 bg-indigo-50 hover:opacity-70"
               } px-7 py-2.5 rounded-full`}
             >
-              {props.taskToEdit ? 'Update' : 'Create'}
+              {props.taskToEdit ? "Update" : "Create"}
             </button>
             <button
               onClick={props.closeHandler}
-              className="px-7 py-2.5 rounded-full focus:rin text-red-500 bg-red-50 hover:opacity-70"
+              className="px-7 py-2.5 rounded-full text-red-500 bg-red-50 hover:opacity-70"
             >
               Cancel
             </button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

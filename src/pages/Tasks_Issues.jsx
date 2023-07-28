@@ -61,6 +61,9 @@ const Tasks_Issues = () => {
         <span>Create Task</span>
         <FaPlus />
       </button>
+      <div className='mt-10 w-[30rem] text-center p-3 rounded-lg bg-zinc-200 text-zinc-700 text-sm font-semibold' >
+        <span>TODO</span>
+      </div>
       <div>
         <Task tasks={allTasks} onDelete={deleteTaskHandler} onEdit={setEditingTask} />
       </div>
@@ -68,7 +71,7 @@ const Tasks_Issues = () => {
         {showTask && <CreateTask addTaskHandler={addTaskHandler} closeHandler={taskCloseHandler} className="create-task-animate" />}
       </div>
       {editingTask && (
-        <div className="absolute max-w-lg top-10 right-10 shadow-2xl rounded-lg">
+        <div className="absolute top-10 right-10 shadow-2xl rounded-lg">
           <CreateTask
             addTaskHandler={updateTaskHandler}
             closeHandler={() => setEditingTask(null)}
