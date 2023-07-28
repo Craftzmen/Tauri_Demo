@@ -8,6 +8,7 @@ import AuthSignUp from './auth/AuthSignUp';
 
 import Home from './home/Home';
 import Tasks_Issues from './pages/Tasks_Issues';
+import Scheduling from './pages/Scheduling';
 
 const AppProviderWithRoutes = () => {
   const AUTH_KEY = "pk_test_dGlkeS1rYXR5ZGlkLTgwLmNsZXJrLmFjY291bnRzLmRldiQ"
@@ -38,7 +39,7 @@ const AppProviderWithRoutes = () => {
             }
           >
             <Route path='tasks_&_issues' element={<Tasks_Issues/> } />
-            <Route path='scheduling' element={<h1>Scheduling</h1>} />
+            <Route path='scheduling' element={<Scheduling/>} />
           </Route>
         </ReactRoutes>
       </ClerkProvider>
