@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import CreateSchdule from "../scheduling/CreateSchdule";
+import Schedule from "../scheduling/Schedule";
 
 const Scheduling = () => {
   const [showSchedule, setShowSchedule] = useState(false);
@@ -13,6 +14,12 @@ const Scheduling = () => {
     setShowSchedule(false);
   };
 
+  const dummySchedule = [
+    { ID: 1, title: 'Development Meeting', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, eveniet', time: '02:02:04' },
+    { ID: 2, title: 'Daily Scrum Meeting', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, eveniet', time: '04:00:00' },
+    { ID: 3, title: 'Scrum Meeting', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, eveniet', time: '01:00:00' },
+  ];
+
   return (
     <div>
       <div className="m-10">
@@ -22,14 +29,18 @@ const Scheduling = () => {
         >
           <span>Schedule an event</span>
           <FaPlus />
+          <p></p>
         </button>
         <React.Fragment>
-            {showSchedule && (
-                 <div className="absolute top-10 right-10 shadow-2xl rounded-lg">
-                    <CreateSchdule closeSchedular={closeCreatorHandler} />
-                </div>
-            )}
+          {showSchedule && (
+            <div className="absolute top-10 right-10 shadow-2xl rounded-lg">
+              <CreateSchdule closeSchedular={closeCreatorHandler} />
+            </div>
+          )}
         </React.Fragment>
+        <div className="mt-10" >
+          <Schedule schedule={dummySchedule} />
+        </div>
       </div>
     </div>
   );
